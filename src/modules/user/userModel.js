@@ -1,13 +1,10 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database'); // Ajuste o caminho do seu config
+import { DataTypes }  from 'sequelize';
+import sequelize  from'../../config/database.js'; // Ajuste o caminho do seu config
+
+import { underscoredIf } from'sequelize/lib/utils';
 
 const User = sequelize.define('User', {
-  id: {
-    type: DataTypes.UUID,
-    defaultValue: DataTypes.UUIDV4,
-    primaryKey: true
-  },
-  name: {
+  FullName: {
     type: DataTypes.STRING,
     allowNull: false
   },
@@ -24,7 +21,15 @@ const User = sequelize.define('User', {
   role: {
     type: DataTypes.ENUM('USER', 'ADMIN'),
     defaultValue: 'USER'
+  },
+  active: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: true
   }
+},
+{
+  timestamps: true, 
+  underscored: true
 });
 
-module.exports = User;
+export default User;

@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+import { DataTypes }  from'sequelize';
+import sequelize  from '../../config/database.js';
 
 const EducationalContent = sequelize.define('EducationalContent', {
   title: {
@@ -7,13 +7,17 @@ const EducationalContent = sequelize.define('EducationalContent', {
     allowNull: false
   },
   body: {
-    type: DataTypes.TEXT,
+    type: DataTypes.STRING,
     allowNull: false
   },
   status: {
     type: DataTypes.ENUM('DRAFT', 'ACTIVE'),
     defaultValue: 'DRAFT'
   }
+},
+{
+  timestamps: true, 
+  underscored: true
 });
 
-module.exports = EducationalContent;
+export default EducationalContent;

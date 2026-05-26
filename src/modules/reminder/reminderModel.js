@@ -1,12 +1,12 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+import { DataTypes } from 'sequelize';
+import sequelize  from'../../config/database.js';
 
 const Reminder = sequelize.define('Reminder', {
   title: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  dosage: {
+  message: {
     type: DataTypes.STRING
   },
   frequency_hours: {
@@ -20,6 +20,10 @@ const Reminder = sequelize.define('Reminder', {
     type: DataTypes.BOOLEAN,
     defaultValue: true
   }
+},
+{
+  timestamps: true, 
+  underscored: true
 });
 
-module.exports = Reminder;
+export default Reminder;
