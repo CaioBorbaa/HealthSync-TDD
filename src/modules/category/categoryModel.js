@@ -1,5 +1,7 @@
-import { DataTypes } from 'sequelize';
-import sequelize from '../../config/database.js';
+import Sequelize from "sequelize";
+const { DataTypes } = Sequelize;
+
+import sequelize from '../../config/database.js'
 
 const Category = sequelize.define('Category', {
   name: {

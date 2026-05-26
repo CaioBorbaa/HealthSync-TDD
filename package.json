@@ -9,8 +9,13 @@
   },
   "devDependencies": {
     "chai": "^6.2.2",
-    "mocha": "^11.7.6",
+    "mocha": "^11.3.0",
     "nodemon": "^3.1.14",
     "sinon": "^22.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "mysql2": "^3.22.4",
+    "sequelize": "^6.37.8"
   }
 }
