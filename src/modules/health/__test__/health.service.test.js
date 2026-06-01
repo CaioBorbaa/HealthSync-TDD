@@ -1,10 +1,10 @@
 import { assert, expect, should } from 'chai';
-import { getHealth } from '../src/modules/health/health.service.js';
+import { getHealth } from '../health.service.js';
 
 // Inicializa a interface 'should' do Chai
 should();
 
-describe('Testes Unitários: Health Service', () => {
+describe('Health Service', () => {
 
     it('Deve retornar status OK e a estrutura completa quando o serviço está saudável', () => {
     const result = getHealth();
