@@ -1,5 +1,5 @@
 {
-  "name": "edustream-tdd",
+  "name": "healthsync-tdd",
   "version": "1.0.0",
   "type": "module",
   "description": "",
@@ -26,7 +26,7 @@
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.19.0",
     "http-errors": "^2.0.1",
-    "morgan": "^1.10.1",
+    "morgan": "^1.11.0",
     "multer": "^2.1.1",
     "mysql2": "^3.22.4",
     "sequelize": "^6.37.8"

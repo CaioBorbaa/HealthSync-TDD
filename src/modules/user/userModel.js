@@ -6,7 +6,11 @@ import { underscoredIf } from'sequelize/lib/utils';
 import sequelize from '../../config/database';
 
 const User = sequelize.define('User', {
-  FullName: {
+  firstName: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  lastName: {
     type: DataTypes.STRING,
     allowNull: false
   },
@@ -20,7 +24,7 @@ const User = sequelize.define('User', {
     type: DataTypes.TEXT,
     allowNull: false
   },
-  role: {
+  admin: {
     type: DataTypes.ENUM('USER', 'ADMIN'),
     defaultValue: 'USER'
   },
