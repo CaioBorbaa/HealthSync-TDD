@@ -13,7 +13,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "keywords": [],
-  "author": "Thiago Rodrigues Canal",
+  "author": "Caio Henrique de Borba",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.3",
