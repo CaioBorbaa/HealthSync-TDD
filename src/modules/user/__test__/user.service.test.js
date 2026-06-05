@@ -147,6 +147,34 @@ describe('User Service - Registro do usuário', () => {
 
     // Corrigido para acessar 'admin' e usar 'toBe'
     expect(result.admin).toBe('ADMIN');
-});
+  });
+
+  it('Cria novo usuário sem ser administrador', async () => {
+    const data = {
+      firstName: 'CaioBorba',
+      lastName: 'Thiago',
+      email: 'Borbaa1004@gmail.com',
+      password: '12345678',
+      confirmPassword: '12345678'
+    };
+
+    mockUserModel.findOne.mockResolvedValueOnce(null);
+    mockUserModel.count.mockResolvedValue(1);
+    
+    // Ajustado o mock para refletir o retorno real esperado 
+    mockUserModel.create.mockResolvedValue({ id: 2, ...data, admin: 'USER' });
+
+    const result = await userService.register(data, mockUserModel);
+
+    expect(mockUserModel.create).toHaveBeenCalledWith(
+      expect.objectContaining({ // <--- Corrigido para o singular
+        firstName: 'CaioBorba',
+        admin: 'USER'
+      })
+    );
+
+    // Corrigido para acessar 'user' e usar 'toBe'
+    expect(result.admin).toBe('USER');
+  });
 
 });
