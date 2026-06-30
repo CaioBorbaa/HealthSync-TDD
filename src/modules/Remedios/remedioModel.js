@@ -1,5 +1,5 @@
 import { DataTypes }  from 'sequelize';
-import sequelize  from'../../config/database.js'; // Ajuste o caminho do seu config
+import sequelize  from'../../config/database.js'; 
 import { underscoredIf } from 'sequelize/lib/utils';
 
 const remedio = sequelize.define('remedio', {

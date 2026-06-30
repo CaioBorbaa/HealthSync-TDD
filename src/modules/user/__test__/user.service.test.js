@@ -24,7 +24,7 @@ describe('User Service - Registro do usuário', () => {
     .rejects
     .toThrow('Preencha todos os campos do formulário');
   });
-
+  
   it('Red - Irá retornar erro se houver espaços entre o primeiro nome', async () =>{
     const data = {
       firstName: 'Ca io',
